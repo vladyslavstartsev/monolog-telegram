@@ -1,7 +1,7 @@
 {
     "name": "rahimi/monolog-telegram",
         "minimum-stability": "dev",
-    "description": "sends monolog logs to telegram channels using bots",
+    "description": "A handler for Monolog that sends messages to Telegram Channels",
         "keywords": ["log", "logging", "monolog", "telegram", "channels","bots"],
 
         "homepage": "https://github.com/moeinrahimi/monolog-telegram",
