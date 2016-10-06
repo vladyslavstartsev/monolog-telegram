@@ -8,7 +8,7 @@ Telegram Handler for monolog which allows you to log messages into telegram chan
 -----------
 Install using composer:
 
-  composer require rahimi/monolog-telegram  
+  >composer require rahimi/monolog-telegram  
 
 
 # Usage
