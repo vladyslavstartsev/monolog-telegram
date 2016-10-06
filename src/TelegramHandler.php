@@ -1,10 +1,10 @@
 <?php
 namespace Moein\TelegramHandler;
 
+use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
-use Monolog\Formatter\LineFormatter;
-// use Moein\TelegramFormatter\;
+
 /**
  * Telegram Handler For Monolog
  *
@@ -30,51 +30,42 @@ class TelegramHandler extends AbstractProcessingHandler
 
      */
 
-    public function __construct($token, $channel, $level = Logger::DEBUG)
+    public function __construct($token, $channel)
     {
 
-        if(!extension_loaded('curl'))
-         throw new Exception('curl is needed to use this library');
-
+        if (!extension_loaded('curl')) {
+            throw new Exception('curl is needed to use this library');
+        }
 
         $this->token   = $token;
         $this->channel = $channel;
     }
 
-
-
     /**
-    * format the log to send
-    * @param $record[] log data  
-    * @return void
-    */
-     public function write(array $record)
+     * format the log to send
+     * @param $record[] log data
+     * @return void
+     */
+    public function write(array $record)
     {
         $format = new LineFormatter;
 
-     $context = $record['context'] ? $format->stringify($record['context']) : '';
+        $context = $record['context'] ? $format->stringify($record['context']) : '';
 
+        $date = $record['datetime']->format("Y-m-d  h:m");
 
-          $date = $record['datetime']->format("Y-m-d * h:m:s");
-
-          $message = $date .PHP_EOL. $this->getEmoji($record['level']). $record['message']. $context;
-
+        $message = $date . PHP_EOL . $this->getEmoji($record['level']) . $record['message'] . $context;
 
         $this->send($message);
 
     }
 
-
-
-
-    
-
     /**
-    *    send log to telegram channel
-    *    @param string $message Text Message
-    *    @return void
-    *
-    */
+     *    send log to telegram channel
+     *    @param string $message Text Message
+     *    @return void
+     *
+     */
     public function send($message)
     {
         $ch = curl_init();
@@ -89,18 +80,16 @@ class TelegramHandler extends AbstractProcessingHandler
             'chat_id' => $this->channel,
         )));
 
-        curl_exec($ch);
-   
+        
+
 
     }
 
-
-
     /**
-    * make emoji for log events
-    * @return array
-    *
-    */
+     * make emoji for log events
+     * @return array
+     *
+     */
     protected function emojiMap()
     {
         return [
@@ -115,7 +104,6 @@ class TelegramHandler extends AbstractProcessingHandler
         ];
     }
 
-
     /**
      * return emoji for given level
      *
@@ -128,5 +116,4 @@ class TelegramHandler extends AbstractProcessingHandler
         return $levelEmojiMap[$level];
     }
 
-   
 }
