@@ -1,5 +1,5 @@
 {
-    "name": "moein/monolog-telegram",
+    "name": "rahimi/monolog-telegram",
     "description": "sends monolog logs to telegram channels using bots",
         "homepage": "https://github.com/moeinrahimi/monolog-telegram",
     "license": "MIT",
