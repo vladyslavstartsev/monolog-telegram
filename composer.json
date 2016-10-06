@@ -2,6 +2,8 @@
     "name": "rahimi/monolog-telegram",
         "minimum-stability": "dev",
     "description": "sends monolog logs to telegram channels using bots",
+        "keywords": ["log", "logging", "monolog", "telegram", "channels","bots"],
+
         "homepage": "https://github.com/moeinrahimi/monolog-telegram",
     "license": "MIT",
     "authors": [
