@@ -7,14 +7,13 @@
         {
             "name": "Moein Rahimi",
             "email": "m.rahimi2150@gmail.com",
-             "name": "Jordi Boggiano",
             "homepage": "https://moeinrahimi.github.io",
             "role": "Developer"
         }
     ],
     "autoload": {
         "psr-4": {
-            "Moein\\TelegramHandler\\": "src"
+            "rahimi\\TelegramHandler\\": "src"
         }
     },
     "require": {

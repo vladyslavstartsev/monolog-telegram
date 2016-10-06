@@ -1,5 +1,5 @@
 <?php
-namespace Moein\TelegramHandler;
+namespace rahimi\TelegramHandler;
 
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\AbstractProcessingHandler;
@@ -80,7 +80,7 @@ class TelegramHandler extends AbstractProcessingHandler
             'chat_id' => $this->channel,
         )));
 
-        
+        curl_exec($ch);
 
 
     }
