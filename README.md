@@ -25,7 +25,7 @@ Now Simply use it like this :
 ```php
 require 'vendor/autoload.php';
 use Monolog\Logger;
-use Moein\TelegramHandler\TelegramHandler;
+use rahimi\TelegramHandler\TelegramHandler;
 $log = new Logger('TelegramHandler');
 $log->pushHandler(new TelegramHandler($token,$channel));
 
