@@ -1,3 +1,5 @@
+
+
 monolog-mysql
 =============
 
@@ -29,6 +31,24 @@ $log->pushHandler(new TelegramHandler($token,$channel));
 
 
 $log->info('hello world !');
+/**
+* There is 8 level of logging
+*/
+$log->notice('hello world !');
+$log->info('hello world !');
+$log->debug('hello world !');
+$log->warning('hello world !');
+$log->critical('hello world !');
+$log->alert('hello world !');
+$log->emergency('hello world !');
+$log->error('hello world !');
+
+
+/**
+* Optionally you can pass second paramater such as a object
+**/
+$log->info('user just logged in !',['user'=>$user]);
+
 ```
 
 # License
