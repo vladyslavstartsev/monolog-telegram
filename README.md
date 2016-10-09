@@ -6,11 +6,23 @@ monolog-mysql
 Telegram Handler for monolog which allows you to log messages into telegram channels using bots . 
 
 
+
+
+# Screenshot
+-------------
+![telegram handler demo screenshot](https://i.imgsafe.org/9d330119c8.png)
+
+
+
+
+
 # Installation
 -----------
 Install using composer:
 
   >composer require rahimi/monolog-telegram  
+
+
 
 
 # Usage
