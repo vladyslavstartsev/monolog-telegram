@@ -1,6 +1,6 @@
 
 
-monolog-mysql
+monolog-telegram
 =============
 
 Telegram Handler for monolog which allows you to log messages into telegram channels using bots . 
