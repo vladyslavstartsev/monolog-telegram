@@ -1,6 +1,7 @@
 <?php
 namespace rahimi\TelegramHandler;
 
+use Exception;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
